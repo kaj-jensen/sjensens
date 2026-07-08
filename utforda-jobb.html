@@ -3,224 +3,128 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Utförda Jobb - Jensens Finsnickerier</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #333;
-      background: #fff;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .topbar {
-      background: #2f2f2f;
-      color: #fff;
-      font-size: 14px;
-      padding: 8px 0;
-    }
-    .wrap {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    header {
-      border-bottom: 1px solid #ddd;
-      background: #fff;
-    }
-    .nav {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: .4px;
-    }
-    .brand span {
-      display: block;
-      font-size: 12px;
-      font-weight: 400;
-      color: #777;
-      margin-top: 2px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-    nav a:hover,
-    nav .active { color: #9b7a4a; }
-    main {
-      padding: 46px 0 56px;
-    }
-    .intro {
-      max-width: 780px;
-      margin-bottom: 34px;
-      font-size: 17px;
-    }
-    .intro a {
-      color: #8b6633;
-      border-bottom: 1px solid #d2b98f;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-    .item {
-      border: 1px solid #e2e2e2;
-      background: #fafafa;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0,0,0,.12);
-    }
-    .thumb {
-      aspect-ratio: 4 / 3;
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.12), rgba(255,255,255,.1)),
-        linear-gradient(45deg, #c8b69a, #7f8278);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,.9);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .item:nth-child(2n) .thumb { background-color: #8a8f87; }
-    .item:nth-child(3n) .thumb { background-color: #b59d7d; }
-    .caption {
-      padding: 14px 16px;
-      font-size: 15px;
-      color: #333;
-      background: #fff;
-    }
-    footer {
-      background: #303030;
-      color: #ddd;
-      padding: 42px 0 22px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 46px;
-      margin-bottom: 30px;
-    }
-    footer h2,
-    footer h3 {
-      margin: 0 0 12px;
-      color: #fff;
-      font-size: 20px;
-    }
-    footer p { margin: 0 0 10px; }
-    .quote { color: #fff; font-style: italic; }
-    .footer-nav {
-      border-top: 1px solid rgba(255,255,255,.16);
-      padding-top: 18px;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-    @media (max-width: 800px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 22px 0;
-      }
-      nav ul { flex-wrap: wrap; gap: 14px 20px; }
-      .gallery { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px) {
-      .gallery { grid-template-columns: 1fr; }
-      .brand { font-size: 21px; }
-    }
-  </style>
+  <title>Utförda Jobb | Jensens Finsnickerier</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="wrap">Jensens Finsnickerier · 070 620 3739</div>
-  </div>
-
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#">
-        Jensens Finsnickerier
-        <span>Kvalitetssnickerier i Gävle</span>
-      </a>
-
-      <nav aria-label="Huvudmeny">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a class="active" href="#">Utförda Jobb</a></li>
-          <li><a href="#">Kontakt</a></li>
-          <li><a href="#">Om oss</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a class="logo" href="index.html">Jensens Finsnickerier</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="utforda-jobb.html" class="active">Utförda Jobb</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="om-oss.html">Om oss</a>
+    </nav>
   </header>
 
-  <main class="wrap">
-    <section class="intro">
+  <main>
+    <section class="page-hero">
+      <h1>Utförda Jobb</h1>
       <p>
-        Här visas ett urval av tidigare arbeten inom finsnickeri, inredning,
-        kök, butiksmiljöer och specialbyggda lösningar.
-        <a href="#">Kontakta Jensens Finsnickerier</a> för mer information.
+        På denna sida kan du se några av våra utförda jobb i bilder.
+        Vi arbetar både lokalt men också utanför Sveriges gränser.
+      </p>
+      <p>
+        <a href="kontakt.html">Kontakta Jensens Finsnickerier</a> i Gävle för mer information.
       </p>
     </section>
 
-    <section class="gallery" aria-label="Utförda jobb">
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Badrum</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Köksinredning</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Butiksinredning</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Specialsnickeri</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Soffa för offentlig miljö</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Platsbyggd bokhylla</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Kök</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Vardagsrum</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Serveringsdisk</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Matbord och blomlådor</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Hotellinredning</div></article>
-      <article class="item"><div class="thumb">Bild</div><div class="caption">Projektinredning</div></article>
+    <section class="gallery-grid">
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2021/05/Badrums-interior-Small.jpg" alt="Badrum" loading="lazy">
+        <figcaption>Badrum</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2021/05/Koksinredning-Stockholm-Small.jpg" alt="Köksinredning" loading="lazy">
+        <figcaption>Köksinredning</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2015/01/Harvey-Nichols-London-014.jpg" alt="Butik J. Lindeberg" loading="lazy">
+        <figcaption>Butik J. Lindeberg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/Messaging1516373238212-768x576.jpg" alt="Jensens Finsnickerier" loading="lazy">
+        <figcaption>Jensens Finsnickerier</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1758-768x432.jpg" alt="Soffa Uppsala Science Park" loading="lazy">
+        <figcaption>Soffa Uppsala Science Park</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/Bokhylla-i-Stockholm1-768x432.jpg" alt="Bokhylla i Stockholm" loading="lazy">
+        <figcaption>Bokhylla i Stockholm</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/bild-2.jpg" alt="Butik J. Lindeberg" loading="lazy">
+        <figcaption>Butik J. Lindeberg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1279-768x432.jpg" alt="Butiksinredning åt J. Lindeberg" loading="lazy">
+        <figcaption>Butiksinredning åt J. Lindeberg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2021/05/kok-stockholm-768x512.jpeg" alt="Kök" loading="lazy">
+        <figcaption>Kök</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2021/05/Bokhylla-interor1-min-768x432.jpg" alt="Vardagsrum" loading="lazy">
+        <figcaption>Vardagsrum</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1753-768x432.jpg" alt="Uppsala Science Park" loading="lazy">
+        <figcaption>Uppsala Science Park</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1282-1-768x432.jpg" alt="Butiksinredning J. Lindeberg" loading="lazy">
+        <figcaption>Butiksinredning J. Lindeberg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1748-768x432.jpg" alt="Serveringsdisk" loading="lazy">
+        <figcaption>Serveringsdisk</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1750-768x432.jpg" alt="Matbord och blomlådor" loading="lazy">
+        <figcaption>Matbord och blomlådor</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2018/03/DSC_1278-768x432.jpg" alt="Butik åt J. Lindeberg" loading="lazy">
+        <figcaption>Butik åt J. Lindeberg</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2019/01/Hotell-inredning-768x432.jpg" alt="Hotelinredning" loading="lazy">
+        <figcaption>Hotelinredning</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://www.sjensens.com/wp-content/uploads/2019/01/Hotell-Inredning-s%C3%A4ngplats-768x432.jpg" alt="Hotelinredning" loading="lazy">
+        <figcaption>Hotelinredning</figcaption>
+      </figure>
+
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <section>
-          <h2>Jensens Finsnickerier AB i Gävle</h2>
-          <p>Ett modernt finsnickeri med fokus på hantverk, kvalitet och genomtänkta lösningar.</p>
-          <p>Företaget arbetar med både privatpersoner och företag, från idé och produktion till färdigt montage.</p>
-          <p class="quote">“Kreativitet från idé till produktion och montage.”</p>
-        </section>
-
-        <section>
-          <h3>Kontakt information</h3>
-          <p>Utjordsvägen 9<br>SE-802 91 Gävle</p>
-          <p>Telefon: 070 620 3739</p>
-          <p>E-mail: info@example.se</p>
-        </section>
-      </div>
-
-      <div class="footer-nav">
-        <a href="#">Home</a>
-        <a href="#">Utförda Jobb</a>
-        <a href="#">Kontakt</a>
-        <a href="#">Om oss</a>
-      </div>
-    </div>
+  <footer class="site-footer">
+    <h2>Jensens Finsnickerier AB i Gävle</h2>
+    <p>Ett modernt finsnickeri med gedigen hantverkskunskap och de senaste tekniska lösningarna.</p>
+    <p>Utjordsvägen 9, SE-802 91 Gävle</p>
+    <p>Telefon: 070 620 3739</p>
   </footer>
 </body>
 </html>
