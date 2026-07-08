@@ -1,3 +1,6 @@
+Yes. Here is the complete modernized CSS, keeping the Cloudflare-safe `.site-footer` footer styling only.
+
+```css
 /* ==========================
    Base
 ========================== */
@@ -329,3 +332,16 @@ button:focus-visible {
     padding: 1.4rem;
   }
 }
+```
+
+Important for Cloudflare Pages: make sure your HTML points to the actual CSS location. Based on the live site, this currently works:
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+while this currently gives a `404` unless you create a `css` folder and put the file there:
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
