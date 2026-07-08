@@ -76,12 +76,13 @@ button:focus-visible {
 
 .site-header,
 .topbar {
-  color: #fff;
-  background: var(--color-header);
+  color: var(--color-header);
+  background: #fff;
+  border-bottom: 1px solid rgb(47 36 29 / 0.12);
 }
 
 .site-header {
-  padding: 0.75rem 4%;
+  padding: 0.7rem 4%;
 }
 
 .header-inner,
@@ -92,7 +93,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  min-height: 88px;
+  min-height: 86px;
 }
 
 .site-header .header-inner {
@@ -102,23 +103,25 @@ button:focus-visible {
   padding-inline: 0;
 }
 
-.logo,
-.brand {
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 700;
-}
-
 .logo {
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
+  color: var(--color-header);
+  font-size: 1.35rem;
+  font-weight: 700;
 }
 
 .logo img {
-  width: 120px;
+  width: 118px;
   max-width: 100%;
   height: auto;
+}
+
+.brand {
+  color: var(--color-header);
+  font-size: 1.35rem;
+  font-weight: 700;
 }
 
 .main-nav,
@@ -134,8 +137,8 @@ button:focus-visible {
 .site-header nav a,
 .topbar nav a,
 .phone-link {
-  color: #fff;
-  font-weight: 600;
+  color: var(--color-header);
+  font-weight: 700;
 }
 
 .phone-link {
@@ -149,7 +152,7 @@ button:focus-visible {
 .topbar nav a.active,
 .topbar nav a:hover,
 .phone-link:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
