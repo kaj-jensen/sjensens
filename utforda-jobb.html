@@ -1,3 +1,6 @@
+Yes. Replace the whole contents of `utforda-jobb.html` with this version. It uses your local `.webp` gallery images and keeps the shared header/menu/footer.
+
+```html
 <!doctype html>
 <html lang="sv">
 <head>
@@ -39,87 +42,87 @@
 
     <section class="gallery-grid">
       <figure>
-        <img src="images/Badrums-interior-Small.jpg" alt="Badrum" loading="lazy">
+        <img src="images/Badrums-interior-Small.webp" alt="Badrum" loading="lazy">
         <figcaption>Badrum</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Koksinredning-Stockholm-Small.jpg" alt="Köksinredning" loading="lazy">
+        <img src="images/Koksinredning-Stockholm-Small.webp" alt="Köksinredning" loading="lazy">
         <figcaption>Köksinredning</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Harvey-Nichols-London-014-300x225.jpg" alt="Butik J. Lindeberg" loading="lazy">
+        <img src="images/Harvey-Nichols-London-014.webp" alt="Butik J. Lindeberg" loading="lazy">
         <figcaption>Butik J. Lindeberg</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Messaging1516373238212-300x225.jpg" alt="Jensens Finsnickerier" loading="lazy">
+        <img src="images/Messaging1516373238212-768x576.webp" alt="Jensens Finsnickerier" loading="lazy">
         <figcaption>Jensens Finsnickerier</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1758-300x169.jpg" alt="Soffa Uppsala Science Park" loading="lazy">
+        <img src="images/DSC_1758-768x432.webp" alt="Soffa Uppsala Science Park" loading="lazy">
         <figcaption>Soffa Uppsala Science Park</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Bokhylla-i-Stockholm1-300x169.jpg" alt="Bokhylla i Stockholm" loading="lazy">
+        <img src="images/Bokhylla-i-Stockholm1-768x432.webp" alt="Bokhylla i Stockholm" loading="lazy">
         <figcaption>Bokhylla i Stockholm</figcaption>
       </figure>
 
       <figure>
-        <img src="images/bild-2-300x200.jpg" alt="Butik J. Lindeberg" loading="lazy">
+        <img src="images/bild-2.webp" alt="Butik J. Lindeberg" loading="lazy">
         <figcaption>Butik J. Lindeberg</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1279-300x169.jpg" alt="Butiksinredning åt J. Lindeberg" loading="lazy">
+        <img src="images/DSC_1279-768x432.webp" alt="Butiksinredning åt J. Lindeberg" loading="lazy">
         <figcaption>Butiksinredning åt J. Lindeberg</figcaption>
       </figure>
 
       <figure>
-        <img src="images/kok-stockholm-300x200.jpeg" alt="Kök" loading="lazy">
+        <img src="images/kok-stockholm-768x512.webp" alt="Kök" loading="lazy">
         <figcaption>Kök</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Bokhylla-interor1-min-300x169.jpg" alt="Vardagsrum" loading="lazy">
+        <img src="images/Bokhylla-interor1-min-768x432.webp" alt="Vardagsrum" loading="lazy">
         <figcaption>Vardagsrum</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1753-300x169.jpg" alt="Uppsala Science Park" loading="lazy">
+        <img src="images/DSC_1753-768x432.webp" alt="Uppsala Science Park" loading="lazy">
         <figcaption>Uppsala Science Park</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1282-1-300x169.jpg" alt="Butiksinredning J. Lindeberg" loading="lazy">
+        <img src="images/DSC_1282-1-768x432.webp" alt="Butiksinredning J. Lindeberg" loading="lazy">
         <figcaption>Butiksinredning J. Lindeberg</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1748-300x169.jpg" alt="Serveringsdisk" loading="lazy">
+        <img src="images/DSC_1748-768x432.webp" alt="Serveringsdisk" loading="lazy">
         <figcaption>Serveringsdisk</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1750-300x169.jpg" alt="Matbord och blomlådor" loading="lazy">
+        <img src="images/DSC_1750-768x432.webp" alt="Matbord och blomlådor" loading="lazy">
         <figcaption>Matbord och blomlådor</figcaption>
       </figure>
 
       <figure>
-        <img src="images/DSC_1278-300x169.jpg" alt="Butik åt J. Lindeberg" loading="lazy">
+        <img src="images/DSC_1278-768x432.webp" alt="Butik åt J. Lindeberg" loading="lazy">
         <figcaption>Butik åt J. Lindeberg</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Hotell-inredning-300x169.jpg" alt="Hotellinredning" loading="lazy">
+        <img src="images/Hotell-inredning-768x432.webp" alt="Hotellinredning" loading="lazy">
         <figcaption>Hotellinredning</figcaption>
       </figure>
 
       <figure>
-        <img src="images/Hotell-Inredning-sängplats-300x169.jpg" alt="Hotellinredning" loading="lazy">
+        <img src="images/Hotell-Inredning-sängplats-768x432.webp" alt="Hotellinredning" loading="lazy">
         <figcaption>Hotellinredning</figcaption>
       </figure>
     </section>
@@ -137,3 +140,6 @@
   </footer>
 </body>
 </html>
+```
+
+One small warning: `Hotell-Inredning-sängplats-768x432.webp` contains `ä`. If that image still fails after deploy, rename the file to `Hotell-Inredning-sangplats-768x432.webp` and update that one HTML line to match.
