@@ -80,6 +80,10 @@ button:focus-visible {
   background: var(--color-header);
 }
 
+.site-header {
+  padding: 0.75rem 4%;
+}
+
 .header-inner,
 .site-header,
 .topbar {
@@ -88,11 +92,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding-block: 1rem;
-}
-
-.site-header {
-  padding-inline: 4%;
+  min-height: 88px;
 }
 
 .site-header .header-inner {
@@ -102,13 +102,21 @@ button:focus-visible {
   padding-inline: 0;
 }
 
+.logo,
+.brand {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
 .logo {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
 }
 
 .logo img {
-  width: 180px;
+  width: 120px;
   max-width: 100%;
   height: auto;
 }
@@ -117,7 +125,8 @@ button:focus-visible {
 .site-header nav,
 .topbar nav {
   display: flex;
-  gap: 1.2rem;
+  align-items: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -127,6 +136,10 @@ button:focus-visible {
 .phone-link {
   color: #fff;
   font-weight: 600;
+}
+
+.phone-link {
+  white-space: nowrap;
 }
 
 .main-nav a.active,
@@ -479,6 +492,20 @@ blockquote span {
 ========================== */
 
 @media (max-width: 800px) {
+  .site-header {
+    padding-block: 1rem;
+  }
+
+  .header-inner,
+  .site-header,
+  .topbar {
+    min-height: auto;
+  }
+
+  .logo img {
+    width: 105px;
+  }
+
   .hero-grid,
   .two-column {
     grid-template-columns: 1fr;
