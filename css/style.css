@@ -102,11 +102,15 @@ button:focus-visible {
   padding-inline: 0;
 }
 
-.logo,
-.brand {
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 700;
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-nav,
