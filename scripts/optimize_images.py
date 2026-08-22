@@ -19,11 +19,11 @@ SOURCES = (
     "unsplash-shavings.jpg",
     "unsplash-tools.jpg",
 )
-WIDTHS = (768, 1280)
+WIDTHS = (640, 768, 1280)
 
 
 def save_avif(image: Image.Image, destination: Path) -> None:
-    image.save(destination, format="AVIF", quality=68, speed=6)
+    image.save(destination, format="AVIF", quality=58, speed=6)
 
 
 for filename in SOURCES:
@@ -38,3 +38,9 @@ for filename in SOURCES:
             height = round(image.height * width / image.width)
             resized = image.resize((width, height), Image.Resampling.LANCZOS)
             save_avif(resized, IMAGES / f"{stem}-{width}.avif")
+
+
+with Image.open(IMAGES / "Jensen-Finsnickeri-Logo.webp") as opened:
+    logo = opened.convert("RGBA")
+    logo.thumbnail((248, 176), Image.Resampling.LANCZOS)
+    logo.save(IMAGES / "Jensen-Finsnickeri-Logo-248.webp", format="WEBP", quality=82, method=6)
