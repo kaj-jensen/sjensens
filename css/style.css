@@ -203,6 +203,9 @@ h1, h2, h3 { color: var(--ink); letter-spacing: -0.035em; line-height: 1.08; tex
 }
 .intro .narrow:not(.contact-box) p, .about-preview .narrow p { max-width: 720px; color: var(--muted); font-size: clamp(1.1rem, 1.7vw, 1.35rem); }
 .intro .narrow:not(.contact-box) > p { grid-column: 2; }
+.about-intro { padding-block: clamp(3.5rem, 5vw, 5.5rem); }
+.about-intro .intro-copy { grid-column: 2; }
+.about-intro .intro-copy p:last-child { margin-bottom: 0; }
 .about-preview { background: var(--sand); }
 .about-preview .text-link { grid-column: 1 / -1; width: fit-content; margin-top: -1.5rem; }
 
@@ -277,6 +280,7 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
   .hero-image { min-height: 500px; }
   .intro .narrow:not(.contact-box), .about-preview .narrow, .section-heading, .contact-box, .two-column { grid-template-columns: 1fr; gap: 2.5rem; }
   .intro .narrow:not(.contact-box) > p { grid-column: auto; }
+  .about-intro .intro-copy { grid-column: auto; }
   .cards { grid-template-columns: 1fr; }
   .card { min-height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
   .card::before { margin-bottom: 1.8rem; }
