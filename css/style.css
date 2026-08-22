@@ -249,7 +249,7 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
 .contact-cta { color: #fff; background: var(--clay); }
 .contact-box { width: min(var(--container), calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); gap: clamp(3rem, 8vw, 8rem); }
 .contact-cta h2 { color: #fff; }
-.contact-cta p, .contact-cta a { color: rgba(255,255,255,.84); }
+.contact-cta p, .contact-cta a { color: #fff; }
 .contact-details { padding-left: 2rem; border-left: 1px solid rgba(255,255,255,.35); color: inherit; }
 .contact-box p { margin-bottom: .55rem; }
 
@@ -389,7 +389,8 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
 .craft img { width: 100%; height: 720px; min-height: 720px; object-fit: cover; }
 .craft .two-column > div:last-child { padding: clamp(4rem, 6vw, 6.5rem); display: flex; flex-direction: column; justify-content: center; }
 .craft h2 { color: #fff; font-size: clamp(3.1rem, 5.5vw, 6rem); line-height: .95; }
-.craft p, .craft blockquote { color: rgba(255,255,255,.68); }
+.craft p, .craft p:not(.eyebrow), .craft blockquote { color: rgba(255,255,255,.86); }
+.craft blockquote span { color: #efa77f; }
 .craft blockquote { border-left-color: #c98754; }
 
 .about-preview { position: relative; overflow: hidden; color: #fff; background: #7f3e28; }
@@ -413,6 +414,7 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .quality-heading .eyebrow { grid-area: label; margin: 0; }
+.quality-heading .eyebrow, .quality-link { color: #843722; }
 .quality-heading h2 { grid-area: title; max-width: none; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.6rem, 5vw, 5.4rem); font-weight: 400; line-height: .92; letter-spacing: -.055em; text-wrap: balance; }
 .quality-heading > p:last-child { grid-area: copy; max-width: 430px; margin: 0 0 .45rem; color: #66625b; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.6; }
 .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
