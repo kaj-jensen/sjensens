@@ -1,2 +1,6 @@
 # Redirect index.html to the canonical homepage
 /index.html / 301
+
+# Preserve the useful legacy WordPress kitchen URL
+/kok-interior/ /utforda-jobb 301
+/kok-interior /utforda-jobb 301
