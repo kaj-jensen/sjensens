@@ -367,10 +367,12 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
 
 @media (min-width: 1100px) {
   .services .section-heading h2 { white-space: nowrap; }
+  .quality-heading h2, .project-heading h2 { white-space: nowrap; }
 }
 
-.project-preview { padding-block: clamp(6rem, 10vw, 10rem); background: #f5f1e9; }
-.project-heading h2 { font-size: clamp(3.5rem, 7vw, 7.5rem); font-weight: 400; }
+.project-preview { padding-block: clamp(4.5rem, 7vw, 7rem); background: #f5f1e9; }
+.project-heading { align-items: center; margin-bottom: clamp(2rem, 3vw, 3rem); }
+.project-heading h2 { max-width: none; font-size: clamp(3.5rem, 5.2vw, 6rem); font-weight: 400; line-height: .94; }
 .project-grid { gap: 1.4rem; }
 .project-card { border-radius: 0; background: #171a18; }
 .project-card img { filter: saturate(.85) contrast(1.03); }
@@ -393,11 +395,21 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
 .about-preview .text-link { color: #fff; }
 .photo-credit { font-size: .68rem; opacity: .65; }
 
-.quality-pillars { padding-block: clamp(5rem, 8vw, 8rem); background: #e8e0d3; }
-.quality-heading { display: grid; grid-template-columns: .35fr 1.15fr .7fr; gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-bottom: 3rem; }
-.quality-heading .eyebrow { margin-bottom: .7rem; }
-.quality-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 5.8vw, 6.4rem); font-weight: 400; line-height: .94; letter-spacing: -.055em; }
-.quality-heading > p:last-child { max-width: 440px; margin: 0 0 .5rem; color: #66625b; font-size: clamp(1rem, 1.35vw, 1.2rem); }
+.quality-pillars { padding-block: clamp(4.5rem, 6.5vw, 6.5rem); background: #e8e0d3; }
+.quality-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(300px, .55fr);
+  grid-template-areas:
+    "label label"
+    "title copy";
+  column-gap: clamp(3rem, 6vw, 7rem);
+  row-gap: 1rem;
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+.quality-heading .eyebrow { grid-area: label; margin: 0; }
+.quality-heading h2 { grid-area: title; max-width: none; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.6rem, 5vw, 5.4rem); font-weight: 400; line-height: .92; letter-spacing: -.055em; }
+.quality-heading > p:last-child { grid-area: copy; max-width: 430px; margin: 0 0 .45rem; color: #66625b; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.6; }
 .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .quality-card { position: relative; min-height: 560px; overflow: hidden; color: #fff; background: #1b1d1b; }
 .quality-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .65s cubic-bezier(.2,.7,.2,1); }
@@ -436,7 +448,7 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
   .services .card-image:last-child { grid-column: 1 / -1; }
   .craft .two-column > div:first-child, .craft img { min-height: 620px; }
   .hero-subpage, .subpage-content, .portfolio-hero, .portfolio-hero-content { min-height: 640px; }
-  .quality-heading { grid-template-columns: 1fr; gap: 1rem; }
+  .quality-heading { grid-template-columns: 1fr; grid-template-areas: "label" "title" "copy"; gap: 1rem; }
   .quality-heading h2 { max-width: 760px; }
   .quality-grid { grid-template-columns: 1fr 1fr; }
   .quality-card:last-child { grid-column: 1 / -1; min-height: 500px; }
