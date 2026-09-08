@@ -1,0 +1,9 @@
+.git
+.wrangler
+.DS_Store
+.assetsignore
+wrangler.jsonc
+
+# Local design previews that are not part of the public website.
+hero-options.html
+images/hero-option-*
