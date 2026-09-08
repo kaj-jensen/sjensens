@@ -464,8 +464,11 @@ blockquote span { display: block; margin-top: .7rem; color: var(--clay); font-fa
 
 @media (max-width: 620px) {
   :root { --section-space: 3.25rem; --section-space-compact: 2.5rem; }
-  .hero-luxury h1 { font-size: clamp(3.25rem, 15vw, 4.4rem); line-height: .93; overflow-wrap: normal; }
-  .hero-content { min-height: 660px; padding-bottom: 2rem; }
+  .hero-luxury h1 { margin-top: 0; font-size: clamp(3.25rem, 15vw, 4.4rem); line-height: .93; overflow-wrap: normal; }
+  .hero-content { min-height: 660px; padding-block: 2rem; }
+  .hero-luxury .eyebrow { position: static; align-self: flex-start; margin-bottom: 1.25rem; }
+  .hero-shade { background: linear-gradient(0deg, rgba(10,12,11,.96) 0%, rgba(10,12,11,.78) 58%, rgba(10,12,11,.38) 100%); }
+  .hero-luxury > .container.hero-content .lead { color: rgba(255,255,255,.96); text-shadow: 0 1px 8px rgba(0,0,0,.72); }
   .hero-bottom { gap: 1.5rem; }
   .hero-luxury .hero-actions { gap: .7rem; }
   .editorial-copy h2 { font-size: 2.75rem; }
