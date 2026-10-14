@@ -4,3 +4,11 @@ node_modules
 node_modules/**
 .assetsignore
 wrangler.jsonc
+.wrangler
+.wrangler/**
+.github
+.github/**
+worker
+worker/**
+scripts
+scripts/**
