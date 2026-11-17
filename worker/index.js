@@ -12,7 +12,9 @@ export default {
       headers.delete("if-modified-since");
       assetRequest = new Request(request, { headers });
     }
-    const response = await env.ASSETS.fetch(assetRequest);
+    const assetResponse = await env.ASSETS.fetch(assetRequest);
+    const response = new Response(assetResponse.body, assetResponse);
+    response.headers.set("x-xss-protection", "0");
     if (!response.headers.get("content-type")?.includes("text/html") || !response.body) return response;
 
     // Cloudflare also reads this nonce when adding its bot-detection scripts.
