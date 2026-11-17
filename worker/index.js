@@ -14,6 +14,7 @@ export default {
     }
     const assetResponse = await env.ASSETS.fetch(assetRequest);
     const response = new Response(assetResponse.body, assetResponse);
+    if (new URL(request.url).hostname.endsWith(".workers.dev")) response.headers.set("X-Robots-Tag", "noindex, nofollow");
     response.headers.set("x-xss-protection", "0");
     if (!response.headers.get("content-type")?.includes("text/html") || !response.body) return response;
 

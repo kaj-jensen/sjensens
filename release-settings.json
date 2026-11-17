@@ -1,0 +1,16 @@
+{
+  "repository": "kaj-jensen/sjensens",
+  "branch": "main",
+  "worker": "sjensens",
+  "account": "d29f48cc069d51d0787fc306533039e1",
+  "productionURL": "https://sjensens.com",
+  "config": "wrangler.jsonc",
+  "artifact": "dist",
+  "paths": [
+    "/",
+    "/om-oss",
+    "/utforda-jobb",
+    "/kontakt"
+  ],
+  "private": false
+}
