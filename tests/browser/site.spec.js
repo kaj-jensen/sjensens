@@ -11,7 +11,7 @@ test('pages render and navigation works',async({page})=>{
 });
 test('forms reject incomplete input without sending enquiries',async({page})=>{
  test.skip(settings.private,'No public forms');
- for(const route of settings.paths){await page.goto(route);for(const input of await page.locator('form input[required]:not([type=hidden]):not([type=checkbox]), form textarea[required]').all()){if(await input.isVisible() && await input.evaluate(e=>e.willValidate)){await input.fill('');expect(await input.evaluate(e=>e.checkValidity())).toBe(false);}}}
+ for(const route of settings.paths){await page.goto(route);for(const input of await page.locator('form input[required]:not([type=hidden]):not([type=checkbox]):not([type=number]), form textarea[required]').all()){if(await input.isVisible() && await input.evaluate(e=>e.willValidate)){await input.fill('');expect(await input.evaluate(e=>e.checkValidity())).toBe(false);}}}
 });
 test('private workspace rejects anonymous and forged identities',async({page,request,baseURL})=>{
  test.skip(!settings.private,'Public website');

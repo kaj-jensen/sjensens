@@ -84,7 +84,6 @@ jobs:
           name: checked-site-build
           path: dist/
       - run: npm run release:prepare
-      - run: npm run release:prepare
       - name: Confirm the checked commit is still current
         env:
           GH_TOKEN: ${{ github.token }}
