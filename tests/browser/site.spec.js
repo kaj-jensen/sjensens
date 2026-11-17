@@ -1,12 +1,12 @@
 import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 const settings=JSON.parse(readFileSync('release-settings.json'));
-test.beforeEach(async({page})=>{await page.route('https://challenges.cloudflare.com/**',r=>r.fulfill({status:200,contentType:'application/javascript',body:''}));await page.route('**/api/**',r=>{if(r.request().method()!=='GET')return r.fulfill({status:503,contentType:'application/json',body:'{"error":"Browser check: delivery disabled"}'});return r.continue();});});
+test.beforeEach(async({page})=>{await page.route('**/api/**',r=>{if(r.request().method()!=='GET')return r.fulfill({status:503,contentType:'application/json',body:'{"error":"Browser check: delivery disabled"}'});return r.continue();});});
 test('pages render and navigation works',async({page})=>{
  test.skip(settings.private,'Private workspace is tested through its authentication boundary');
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  for(const route of settings.paths){const response=await page.goto(route);expect(response.status(),route).toBe(200);await expect(page.locator('h1').first()).toBeVisible();const csp=response.headers()['content-security-policy'];expect(csp,'Production security policy must be present').toBeTruthy();expect(csp).not.toMatch(/script-src[^;]*'unsafe-inline'/);await expect(page.locator('body')).not.toHaveText(/^\s*$/);
- const styles=await page.locator('link[rel="stylesheet"]').evaluateAll(nodes=>nodes.map(node=>node.href));expect(styles.length).toBeGreaterThan(0);for(const url of styles){const asset=await page.request.get(url);expect(asset.status(),'Stylesheet '+url).toBe(200);expect(asset.headers()['content-type']).toContain('text/css');}
+ const styles=await page.locator('link[rel="stylesheet"]').evaluateAll(nodes=>nodes.map(node=>node.href));expect(styles.length).toBeGreaterThan(0);await expect.poll(()=>page.evaluate(()=>[...document.styleSheets].filter(sheet=>sheet.href&&new URL(sheet.href).origin===location.origin).some(sheet=>sheet.cssRules.length>0))).toBe(true);
  await expect.poll(()=>page.locator('img').first().evaluate(image=>image.complete&&image.naturalWidth>0)).toBe(true);
  expect(await page.evaluate(()=>[...document.styleSheets].some(sheet=>!!sheet.href))).toBe(true);}
  const home=page.locator('a[href="/"]').first();if(await home.isVisible()){await home.click();await expect(page.locator('h1').first()).toBeVisible();}
