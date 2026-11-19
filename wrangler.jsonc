@@ -1,4 +1,5 @@
 {
+  "preview_urls": false,
   "name": "sjensens",
   "compatibility_date": "2026-07-06",
   "assets": {
@@ -7,4 +8,12 @@
     "run_worker_first": true
   },
   "main": "./worker/index.js"
+,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "redact_query_string": true,
+    "logs": { "enabled": true, "invocation_logs": false },
+    "traces": { "enabled": false }
+  }
 }

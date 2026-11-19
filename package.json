@@ -6,7 +6,7 @@
     "prebuild": "node scripts/check-framework-policy.mjs",
     "build": "node scripts/build-site.mjs",
     "test:browser": "playwright test",
-    "release:checks": "node scripts/check-csp.mjs && node --test tests/release-policy.test.mjs",
+    "release:checks": "node scripts/check-csp.mjs && node --test tests/release-policy.test.mjs && node --test tests/security-boundary.test.mjs",
     "release:prepare": "node scripts/prepare-release.mjs",
     "deploy": "gh workflow run browser-checks.yml --ref main --repo kaj-jensen/sjensens"
   },
