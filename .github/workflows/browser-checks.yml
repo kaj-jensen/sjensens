@@ -54,10 +54,8 @@ jobs:
   deploy:
     needs: [browser, source]
     if: >-
-      (github.event_name == 'pull_request' &&
-       github.event.pull_request.head.repo.full_name == github.repository &&
-       github.actor != 'dependabot[bot]') ||
-      (github.event_name != 'pull_request' && github.ref == 'refs/heads/main')
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -68,7 +66,7 @@ jobs:
       group: site-deploy-${{ github.event.pull_request.number || 'production' }}
       cancel-in-progress: false
     environment:
-      name: ${{ github.event_name == 'pull_request' && 'preview' || 'production' }}
+      name: production
       url: ${{ steps.release.outputs.url }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
